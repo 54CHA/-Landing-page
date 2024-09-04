@@ -1,5 +1,107 @@
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+.navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #4c74ac;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.phoneNumber {
+  color: white;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+}
+
+.request {
+  background-color: white;
+  border-radius: 1rem;
+  color: #4c74ac;
+  padding: 0.1rem 0.5rem;
+}
+
+.bgImage {
+  background-image: url("../public/bgImage.png");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 5.5rem;
+  padding-top: 6rem;
+}
+.underTitle {
+  color: white;
+  font-size: 1rem;
+  padding-top: 1rem;
+  width: 50%;
+}
+
+.smallUnderTitle {
+  color: white;
+  font-size: 0.6rem;
+  padding-top: 1rem;
+}
+
+.frontPage {
+  flex: 1;
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.consultation {
+  margin-top: 1rem;
+  background: linear-gradient(to right, #204c87, #86bfe5);
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-radius: 0.8rem;
+  /* max-width: 40%; */
+  max-width: 50rem;
+  font-size: 2rem;
+}
+
+.consultation:hover {
+  background: linear-gradient(to right, #568ddb, #c7defe);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+    padding-top: 3rem;
+  }
+
+  .underTitle {
+    width: 100%;
+  }
+
+  .consultation {
+    max-width: 100%;
+    font-size: 1.5rem;
+  }
+}
