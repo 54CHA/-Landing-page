@@ -5,6 +5,9 @@ const RegWindow = ({ isOpen, onClose }) => {
     <>
       <div className="BgDark" onClick={onClose}></div>
       <div className="window">
+        <button className="closeButton" onClick={onClose}>
+          <span className="closeIcon"></span>
+        </button>
         <div className="hReg1">Получить бесплатную консультацию</div>
         <div className="hReg2">
           Заполните форму, наш специалист свяжется с вами в течении нескольких
@@ -15,14 +18,14 @@ const RegWindow = ({ isOpen, onClose }) => {
             type="text"
             className="inputWindow"
             placeholder="Как вас зовут?"
-          ></input>
+          />
           <input
-            type="text"
+            type="tel"
             className="inputWindow"
             placeholder="+7 (999) 999-99-99"
-          ></input>
+          />
           <input
-            type="text"
+            type="email"
             className="inputWindow"
             placeholder="Ваша почта"
           ></input>
