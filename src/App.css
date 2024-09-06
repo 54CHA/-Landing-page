@@ -11,6 +11,7 @@
 
 body {
   font-family: "Roboto-Regular", sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -62,7 +63,7 @@ a {
 .title {
   color: white;
   font-weight: bold;
-  font-size: 5.5rem;
+  font-size: 130px;
   padding-top: 6rem;
   font-family: "Benzin-Semibold";
   line-height: 130px;
@@ -246,6 +247,11 @@ a {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: auto; /* Center the container itself */
+  max-width: 100%; /* Ensure it doesn’t exceed the width of its parent */
+  padding: 2rem; /* Add padding to avoid content touching the edges */
 }
 
 .jobsBox {
@@ -295,6 +301,7 @@ a {
 .jobs {
   display: flex;
   justify-content: center;
+  align-items: center; /* Center content vertically within the container */
   margin: auto;
 }
 
@@ -303,6 +310,7 @@ a {
   flex-direction: column;
   padding: 1rem;
 }
+
 
 /* Footer */
 
@@ -328,12 +336,11 @@ a {
  height: 116px;
 }
 
-.footerLinksTitle {
-  display: flex;
-  gap: 4rem;
-  font-size: 40px;
+/* remove this className */
+
+/* .footerLinksTitle {
   
-}
+} */
 
 .footerLocation {
   display: flex;
@@ -507,6 +514,7 @@ select:focus {
   margin-left: 5rem;
   font-family: "Benzin-Semibold";
   line-height: 100px;
+  margin-bottom: 1.5rem;
 }
 
 .questionsText {
@@ -624,6 +632,7 @@ select:focus {
 .whyUs {
   display: flex;
   margin: 5rem;
+  margin-right: 0;
 }
 
 .whyUsTitle {
@@ -639,6 +648,7 @@ select:focus {
 
 .whyUsImage {
   transform: translateX(-200px);
+  width: 1316px;
 }
 
 .whyUsText {
@@ -650,4 +660,42 @@ select:focus {
 .whyUsTextContainer {
   display: flex;
   flex-direction: column;
+  
+}
+
+@media screen and (max-width:1919px) {
+  .whyUsImage {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+.points{
+  display: flex;
+  flex-direction: column;
+}
+
+.point1{
+  border-style: 1px solid blue;
+  font-size: 30px;
+  color: #687cbc;
+  border-radius: 2rem;
+}
+.point2{
+  border-style: 1px solid blue;
+  font-size: 30px;
+  color: #687cbc;
+  border-radius: 2rem;
+}
+.point3{
+  border-style: 1px solid blue;
+  font-size: 30px;
+  color: #687cbc;
+  border-radius: 2rem;
+}
+.point4{
+  border-style: 1px solid blue;
+  font-size: 30px;
+  color: #687cbc;
+  border-radius: 2rem;
 }
