@@ -2,24 +2,27 @@ const AboutUs = () => {
   return (
     <div className="aboutUs">
       <div className="aboutUsLeft">
-        <div>Коротко о нас</div>
-        <div>Более 9 лет на рынке</div>
-        <div>
+        <div className="aboutUsLeftTitle">Коротко о нас</div>
+        <div className="aboutUsLeftTextContainer">
+        <div className="aboutUsLeftText">Более 9 лет на рынке</div>
+        <div className="aboutUsLeftText">
           В нашей организации работают дипломированные специалисты, кандидат
           технических наук, инженеры с большим стажем работы и квалифицированный
           сметчик
         </div>
-        <div>
+        <div className="aboutUsLeftText">
           Наработан огромный опыт, позволяющий провести экспертизу даже в самых
           сложных ситуациях
         </div>
-        <div>Работаем как с юридическими, так и с физическими лицами</div>
-        <div>Не накручиваем цены и не навязываем ненужные допуслуги</div>
+        <div className="aboutUsLeftText">Работаем как с юридическими, так и с физическими лицами</div>
+        <div className="aboutUsLeftText">Не накручиваем цены и не навязываем ненужные допуслуги</div>
+      </div>
       </div>
 
       <div className="aboutUsRight">
         <div className="leftHalf">
           <img src="/Building1.svg" alt="Building 1" className="leftHalfImg" />
+          {/* <img src="/topBuilding.svg" alt="Building Top" className="leftHalfImgTop" /> */}
           <div className="leftHalfSmallBlocks">
             <div className="smallBlock1">
               <div className="smallBlock1Text">{">"}500</div> обследовано зданий и сооружений

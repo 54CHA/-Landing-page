@@ -1,6 +1,12 @@
-import AboutUs from "./AboutUs";
+import { useState } from 'react';
+import RegWindow from "./RegWindow";
 
 const FrontPage = () => {
+  const [isRegWindowOpen, setIsRegWindowOpen] = useState(false);
+
+  const openRegWindow = () => setIsRegWindowOpen(true);
+  const closeRegWindow = () => setIsRegWindowOpen(false);
+
   return (
     <div className="bgImage">
       <div className="frontPage">
@@ -10,15 +16,15 @@ const FrontPage = () => {
           оценочную, экспертизу пожарной безопасности. Профессиональное
           заключение от квалифицированных специалистов.{" "}
         </div>
-        <a className="consultation" href="./">
-          Бесплатная консультация
-        </a>
+        <button className="consultation" onClick={openRegWindow}>
+        Бесплатная консультация
+        </button>
         <div className="smallUnderTitle">
           *Узнаем всё о вашей ситуации, дадим предварительную оценку экспертизы,
           ответим на все вопросы.
         </div>
       </div>
-      <AboutUs />
+      <RegWindow isOpen={isRegWindowOpen} onClose={closeRegWindow} />
     </div>
   );
 };

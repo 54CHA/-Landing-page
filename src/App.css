@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Roboto-Regular", sans-serif;
+}
+
 .navbar {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -13,6 +17,8 @@
   background-color: #4c74ac;
   align-items: center;
   width: 100%;
+  position: fixed;
+  z-index: 1000;
 }
 
 a {
@@ -35,6 +41,8 @@ a {
   color: #4c74ac;
   padding: 0.1rem 0.5rem;
 }
+
+/* FRONT-PAGE */
 
 .bgImage {
   background-image: url("../public/bgImage.png");
@@ -75,67 +83,29 @@ a {
 }
 
 .consultation {
-  margin-top: 1rem;
   background: linear-gradient(to right, #204c87, #86bfe5);
   color: white;
   padding: 1rem 1.5rem;
   text-align: center;
   border-radius: 0.8rem;
-  /* max-width: 40%; */
   max-width: 50rem;
   font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .consultation:hover {
   background: linear-gradient(to right, #568ddb, #c7defe);
 }
 
+/* About Us */
 
 .aboutUs {
   display: flex;
   flex-direction: row;
-}
-
-.aboutUsRight {
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  border-top-left-radius: 2rem;
-  padding-top: 3rem;
-  width: 65%;
-  flex-wrap: nowrap;
-}
-
-.leftHalf,
-.rigthHalf {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-}
-
-/* .leftHalfImg,
-.rigthHalf img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-} */
-
-.leftHalfSmallBlocks {
-  display: flex;
-  gap: 1rem;
-}
-
-.smallBlock1,
-.smallBlock2 {
-  background-color: #687cbc;
-  border-radius: 2rem;
-  padding: 2rem;
-  color: white;
-  margin: 1rem 0;
-  text-align: center;
-  font-size: 1rem;
-  width: 100%;
+  margin-top: -3rem;
+  flex-wrap: wrap;
 }
 
 .aboutUsLeft {
@@ -143,14 +113,94 @@ a {
   display: flex;
   flex-direction: column;
   border-top-right-radius: 2rem;
-  padding-top: 3rem;
-  width: 35%;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 35%;
+}
+
+.aboutUsLeftText {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #687cbc;
+}
+
+.aboutUsLeftTextContainer {
+  width: 80%;
+  margin-left: 3rem;
+}
+
+.aboutUsLeftTitle {
+  color: #4c74ac;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: 3rem;
+}
+
+.aboutUsRight {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 2rem;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 65%;
+  flex-wrap: wrap;
+  padding-left: 0;
 }
 
 .leftHalf {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftHalfImg {
+  z-index: 300;
+}
+
+.leftHalfImgTop {
+  z-index: 200;
+  position: absolute;
 }
 
 .rigthHalf {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftHalfSmallBlocks {
+  gap: 1rem;
+  display: flex;
+
+  min-height: 200px;
+}
+
+.smallBlock2 {
+  flex-direction: column;
+  background-color: #687cbc;
+  border-radius: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
+  display: flex;
+
+  min-height: 184px;
+  padding: 2rem;
+}
+
+.smallBlock1 {
+  background-color: #687cbc;
+  border-radius: 2rem;
+  padding: 2rem;
+  color: white;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  width: 100%;
 }
 
 .smallBlock1Text {
@@ -158,3 +208,334 @@ a {
   font-size: 3rem;
   font-style: italic;
 }
+
+@media (max-width: 1200px) {
+  .aboutUsLeft,
+  .aboutUsRight {
+    max-width: 100%;
+  }
+
+  .leftHalf,
+  .rigthHalf {
+    max-width: 100%;
+  }
+}
+
+/* Jobs */
+
+.jobsTitle {
+  color: #4c74ac;
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: 5rem;
+  margin-bottom: 2rem;
+}
+
+.jobsContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.jobsBox {
+  background-color: #687cbc;
+  width: 550px;
+  height: 500px;
+  border-radius: 2rem;
+  color: #dfdede;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.jobsBox:hover {
+  transform: scale(1.01);
+  background-color: #1e3d83;
+  z-index: 1;
+}
+
+.jobsBoxTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.jobsBoxTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.jobsBoxText {
+  font-size: 30px;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.jobsBoxText2 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.jobs {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.jobsBoxTextContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #4c74ac;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  font-size: 30px;
+  padding: 3rem;
+}
+
+.footerContacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinksTitle {
+  display: flex;
+  gap: 4rem;
+  font-size: 40px;
+}
+
+.footerLocation {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLocationTitle {
+  display: flex;
+  font-size: 40px;
+}
+
+.footerLocationIcon {
+  width: 40px;
+}
+
+/* POPUP-WINDOW */
+
+.window {
+  width: 50rem;
+  height: 67rem;
+  border-radius: 1.9rem;
+  background-color: #4c74ac;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+}
+
+.inputWindow,
+.submitWindow,
+input::placeholder {
+  position: relative;
+  border-radius: 3rem;
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  height: 101px;
+  width: 608px;
+  line-height: 35.16px;
+  margin-left: 3.75rem;
+  margin-top: 2.5rem;
+  cursor: pointer;
+}
+.inputWindow,
+input::placeholder {
+  padding-left: 2.5rem;
+}
+.inputWindow {
+  background-color: #4c74ac;
+  border-style: solid;
+  border-color: #a8a8a8;
+  border-width: 1px;
+}
+.submitWindow {
+  background-color: #1e3d83;
+  border: none;
+}
+.inputWindow:hover,
+.submitWindow:hover {
+  opacity: 0.8;
+}
+
+.hReg1 {
+  font-size: 2.3rem;
+  line-height: 2.9rem;
+  padding-top: 6.26rem;
+  padding-left: 3.75rem;
+  width: 43.75rem;
+  font-weight: 600px;
+}
+.hReg2 {
+  font-size: 1.875rem;
+  line-height: 2.1rem;
+  padding-top: 1rem;
+  padding-left: 3.75rem;
+  width: 43.75rem;
+  font-weight: 400px;
+}
+
+.BgDark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #4c74ac;
+  outline-offset: 2px;
+}
+
+/* Questions */
+
+.questionsContainer {
+  display: flex;
+  flex-direction: row;
+
+}
+.questionsTitle {
+  font-size: 100px;
+  font-weight: bold;
+  color: #4c74ac;
+  margin-left: 5rem;
+}
+
+.questionsText {
+  font-size: 30px;
+  width: 558px;
+  margin-left: 5rem;
+  color: #687cbc;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 2rem;
+}
+
+/* Send Question */
+
+.sendQuestion {
+  max-width: 725px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sendQuestionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.sendQuestionFormRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.sendQuestionFormRow1,
+.sendQuestionFormRow2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sendQuestionForm input,
+.sendQuestionForm textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.sendQuestionForm input {
+  margin-bottom: 15px;
+}
+
+.sendQuestionForm textarea {
+  height: 150px;
+  resize: none;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.sendQuestionSubmit {
+  width: 100%;
+  background-color: #1E3D83;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sendQuestionSubmit:hover {
+  background-color: #3a5a8c;
+}
+
+/* Placeholder styles */
+.sendQuestionForm input::placeholder,
+.sendQuestionForm textarea::placeholder {
+  color: #4C74AC;
+  opacity: 1;
+}
+
+/* For Internet Explorer */
+.sendQuestionForm input:-ms-input-placeholder,
+.sendQuestionForm textarea:-ms-input-placeholder {
+  color: #4C74AC;
+}
+
+/* For Microsoft Edge */
+.sendQuestionForm input::-ms-input-placeholder,
+.sendQuestionForm textarea::-ms-input-placeholder {
+  color: #4C74AC;
+}
+
+/* Ensure inputs take full width of their container */
+.sendQuestionFormRow1 input,
+.sendQuestionFormRow2 input {
+  width: 100%;
+}
+
