@@ -29,6 +29,7 @@ body {
   z-index: 1000;
   top: 0;
   font-size: 30px;
+  flex-wrap: wrap;
 }
 
 .navbar-links {
@@ -42,6 +43,59 @@ body {
   flex-direction: row;
   gap: 60px;
   align-items: center;
+}
+
+.navbar-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  opacity: 1;
+}
+
+.navbar-links a:hover {
+  color: #ddebff;
+}
+
+.phoneNumber a {
+  transition: color 0.3s ease;
+}
+
+.phoneNumber a:hover {
+  color: #ddebff;
+}
+
+.request {
+  background-color: white;
+  border-radius: 25px;
+  color: #4c74ac;
+  width: 266px;
+  height: 41px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.request a:hover {
+  background-color: #ddebff;
+  color: #4c74ac;
 }
 
 /* Location Dropdown */
@@ -105,11 +159,12 @@ body {
 .city-list li {
   padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .city-list li:hover {
   background-color: #3a5a8c;
+  color: #ddebff;
 }
 
 a {
@@ -159,6 +214,7 @@ a {
   flex-direction: column;
   margin-top: 5rem;
   z-index: 1;
+  
 }
 
 .bgImage::before {
@@ -698,13 +754,14 @@ select:focus {
 .servicesBox {
   width: 550px;
   height: 500px;
-  background-image: url(../public/services/zaliv.svg);
   border-radius: 30px;
   color: #dfdede;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease;
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .servicesBox::before {
@@ -757,6 +814,7 @@ select:focus {
 .questions {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
 /* Send Question */
@@ -925,7 +983,7 @@ select:focus {
   font-size: 30px;
   color: #4c74ac;
   border-radius: 30px;
-  width: 83%;
+  width: 84%;
   padding: 10px;
   margin-left: 4%;
   text-align: center;
@@ -958,7 +1016,7 @@ select:focus {
   font-size: 30px;
   color: #4c74ac;
   border-radius: 30px;
-  width: 91%;
+  width: 92%;
   padding: 10px;
   margin-left: 5%;
   text-align: center;
@@ -998,8 +1056,6 @@ select:focus {
   );
 }
 
-/* Uncomment this to make the slider stop on hover */
-
 .documents:hover .documentSlide {
   animation-play-state: paused;
 }
@@ -1034,43 +1090,36 @@ select:focus {
 
 .serviceTitle {
   font-family: "Benzin-Semibold";
-  font-size: 6.25rem;
+  font-size: 75px;
   font-weight: bold;
   color: #4c74ac;
   margin-left: 101px;
-  line-height: 6.25rem;
+  line-height: 4rem;
   margin-bottom: 1.5rem;
-  font-family: 'Benzin-Semibold';
+  font-family: "Benzin-Semibold";
+  width: 60%;
 }
 
-.service{
+.service {
   margin-top: 150px;
 }
 
 .questionsText {
-  font-size: 1.875rem;
-  width: 35rem;
-
+  font-size: 30px;
+  width: 868px;
   color: #687cbc;
   font-weight: 500;
 }
 
-.questions {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-.serviceImg {
-  width: 36%;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
+.serviceImage {
+  width: 700px;
+  border-radius: 50px;
+  margin-right: 106px;
 }
 .serviceText {
   font-size: 1.875rem;
-  width: 53.7rem;
   color: #687cbc;
   font-weight: 400;
   margin-left: 101px;
+  max-width: 45%;
 }

@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="footerContacts">
         <img src="/logo.svg" alt="Logo" />
         <div className="footerContactsTitle">
-        <p className="footerLocationTitle">Контакты</p>
-        <p>+7 (916) 830-58-58</p>
-        <p>
-          <a href="mailto:ckeproekt@yandex.ru">ckeproekt@yandex.ru</a>
-        </p>
+          <p className="footerLocationTitle">Контакты</p>
+          <a href="tel:+79168305858">+7 (916) 830-58-58</a>
+          <p>
+            <a href="mailto:ckeproekt@yandex.ru">ckeproekt@yandex.ru</a>
+          </p>
         </div>
       </div>
       <div className="footerLinks">

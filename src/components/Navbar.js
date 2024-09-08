@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import RegWindow from "./RegWindow";
-import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isRegWindowOpen, setIsRegWindowOpen] = useState(false);
@@ -10,13 +9,11 @@ const Navbar = () => {
   const closeRegWindow = () => setIsRegWindowOpen(false);
   const [selectedCity, setSelectedCity] = useState("Москва");
 
-  const cities = ["Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург"];
+  const cities = ["Москва", "Санкт-Петербург"];
 
   const phoneNumbers = {
     Москва: "+7 (916) 830-58-58",
-    "Санкт-Петербург": "+7 (812) 123-45-67",
-    Новосибирск: "+7 (383) 987-65-43",
-    Екатеринбург: "+7 (343) 765-43-21",
+    "Санкт-Петербург": "+7 (916) 830-58-58",
   };
 
   const selectCity = (city) => {
@@ -65,7 +62,11 @@ const Navbar = () => {
           Оставить заявку
         </a>
       </div>
-      <RegWindow isOpen={isRegWindowOpen} onClose={closeRegWindow} />
+      <RegWindow
+        isOpen={isRegWindowOpen}
+        onClose={closeRegWindow}
+        selectedCity={selectedCity} // Pass the selected city as a prop
+      />
     </nav>
   );
 };

@@ -18,10 +18,12 @@ function App() {
       <Routes>
         <Route path="/tech" element={
           <>
-          <Navbar />
-          <Tech />
-          <Footer />
-          </>} />
+            <Navbar />
+            <Tech />
+            <Questions />
+            <Footer />
+          </>
+        } />
         <Route path="/" element={
           <>
             <Navbar />

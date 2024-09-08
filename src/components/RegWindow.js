@@ -1,4 +1,4 @@
-const RegWindow = ({ isOpen, onClose }) => {
+const RegWindow = ({ isOpen, onClose, selectedCity }) => {
   if (!isOpen) return null;
 
   const handleSubmit = async (event) => {
@@ -15,6 +15,7 @@ const RegWindow = ({ isOpen, onClose }) => {
       Телефон: ${phone}
       Почта: ${email}
       Пожелания: ${wishes}
+      Город: ${selectedCity}
     `;
 
     const botToken = '7026300930:AAEF6oauOI7RQMAC1UiWvrfzWzbqbOzpux4';
