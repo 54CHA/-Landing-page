@@ -52,15 +52,15 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="phoneNumber">
-          <Link to="/tech">
+        <div className="phoneNumber" onClick={openRegWindow}>
+          <a>
             {phoneNumbers[selectedCity]}
             <div className="callBack">заказать обратный звонок</div>
-          </Link>
+          </a>
         </div>
-        <a className="request" onClick={openRegWindow}>
+        <button className="request" onClick={openRegWindow} style={{}}>
           Оставить заявку
-        </a>
+        </button>
       </div>
       <RegWindow
         isOpen={isRegWindowOpen}

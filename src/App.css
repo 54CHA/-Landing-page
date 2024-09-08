@@ -14,6 +14,7 @@
 body {
   font-family: "Roboto-Regular", sans-serif;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 .navbar {
@@ -80,18 +81,6 @@ body {
   color: #ddebff;
 }
 
-.request {
-  background-color: white;
-  border-radius: 25px;
-  color: #4c74ac;
-  width: 266px;
-  height: 41px;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 .request a:hover {
   background-color: #ddebff;
@@ -189,7 +178,7 @@ a {
   background-color: white;
   border-radius: 25px;
   color: #4c74ac;
-  width: 266px;
+  width: 13.854vw;
   height: 41px;
   font-size: 30px;
   display: flex;
@@ -207,6 +196,7 @@ a {
 .bgImage {
   background-image: url("../public/bgImage.png");
   min-height: 100vh;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -214,7 +204,6 @@ a {
   flex-direction: column;
   margin-top: 5rem;
   z-index: 1;
-  
 }
 
 .bgImage::before {
@@ -237,14 +226,14 @@ a {
   color: #dfdede;
   padding-top: 1rem;
   font-weight: 400;
-  width: 974px;
+  width: 50.729vw;
 
   font-size: 30px;
 }
 
 .smallUnderTitle {
   color: #dfdede;
-  font-weight: 500;
+  font-weight: 500px;
   font-size: 15px;
   padding-top: 1rem;
 }
@@ -290,6 +279,11 @@ a {
   outline: none;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
 /* About Us */
 
 .aboutUs {
@@ -513,18 +507,6 @@ a {
   font-size: 30px;
   color: #ffffff;
   margin-top: auto;
-}
-
-@media (max-width: 1500px) {
-  .jobsBox {
-    width: calc(50% - 1rem);
-  }
-}
-
-@media (max-width: 1000px) {
-  .jobsBox {
-    width: 100%;
-  }
 }
 
 /* Footer */
@@ -807,7 +789,7 @@ select:focus {
 
 .questionsText {
   font-size: 30px;
-  width: 558px;
+  max-width: 558px;
   color: #687cbc;
 }
 
