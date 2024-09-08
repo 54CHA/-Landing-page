@@ -1,30 +1,33 @@
 const Services = () => {
-    return ( <div className="Services">
-        <div className="jobsTitle">Услуги</div>
-        <div className="jobs">
+  return (
+    <div id="services">
+      <div className="jobsTitle">Услуги</div>
+      <div className="jobs">
         <div className="jobsContainer">
-        <div className="jobsBox">
-            <div className="jobsBoxTitle">Обследование зданий
-            и сооружений</div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">
+              Обследование зданий и сооружений
+            </div>
           </div>
-          <div className="jobsBox">
-            <div className="jobsBoxTitle">Залив квартиры</div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">Залив квартиры</div>
           </div>
-          <div className="jobsBox">
-            <div className="jobsBoxTitle">Залив квартиры</div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">Залив квартиры</div>
           </div>
-          <div className="jobsBox">
-            <div className="jobsBoxTitle"></div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">Залив квартиры</div>
           </div>
-          <div className="jobsBox">
-            <div className="jobsBoxTitle"></div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">Залив квартиры</div>
           </div>
-          <div className="jobsBox">
-            <div className="jobsBoxTitle"></div>
+          <div className="servicesBox">
+            <div className="servicesBoxTitle">Залив квартиры</div>
           </div>
         </div>
       </div>
-    </div> );
-}
- 
+    </div>
+  );
+};
+
 export default Services;

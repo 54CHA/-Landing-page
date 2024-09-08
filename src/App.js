@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import FrontPage from "./components/FrontPage";
 import RegWindow from "./components/RegWindow";
@@ -8,20 +9,35 @@ import Footer from "./components/Footer";
 import WhyUs from "./components/WhyUs";
 import Questions from "./components/Questions";
 import Services from "./components/Services";
+import Tech from "./components/Tech";
+import Documents from "./components/Documents";
 
 function App() {
   return (
-    <>
-      <RegWindow />
-      <Navbar />
-      <FrontPage />
-      <AboutUs />
-      <Jobs />
-      <WhyUs />
-      <Services />
-      <Questions />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/tech" element={
+          <>
+          <Navbar />
+          <Tech />
+          <Footer />
+          </>} />
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <RegWindow />
+            <FrontPage />
+            <AboutUs />
+            <Jobs />
+            <WhyUs />
+            <Documents />
+            <Services />
+            <Questions />
+            <Footer />
+          </>
+        } />
+      </Routes>
+    </Router>
   );
 }
 

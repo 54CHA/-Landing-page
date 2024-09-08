@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import RegWindow from "./RegWindow";
 
 const FrontPage = () => {
@@ -8,7 +8,7 @@ const FrontPage = () => {
   const closeRegWindow = () => setIsRegWindowOpen(false);
 
   return (
-    <div className="bgImage">
+    <div className="bgImage" id="frontpage">
       <div className="frontPage">
         <div className="title">Центр комплексной экспертизы</div>
         <div className="underTitle">
@@ -17,7 +17,7 @@ const FrontPage = () => {
           заключение от квалифицированных специалистов.{" "}
         </div>
         <button className="consultation" onClick={openRegWindow}>
-        Бесплатная консультация
+          Бесплатная консультация
         </button>
         <div className="smallUnderTitle">
           *Узнаем всё о вашей ситуации, дадим предварительную оценку экспертизы,
