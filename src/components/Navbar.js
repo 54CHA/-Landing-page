@@ -4,6 +4,7 @@ import RegWindow from "./RegWindow";
 
 const Navbar = () => {
   const [isRegWindowOpen, setIsRegWindowOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openRegWindow = () => setIsRegWindowOpen(true);
   const closeRegWindow = () => setIsRegWindowOpen(false);
@@ -20,24 +21,34 @@ const Navbar = () => {
     setSelectedCity(city);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="navbar">
-      <Link to="/#frontpage">
+      <Link to="/#frontpage" smooth>
         <img src="/logo.svg" alt="Logo" />
       </Link>
 
-      <div className="navbar-links">
-        <Link to="/#aboutus" className="">
+      <div className="burger-menu" onClick={toggleMenu}>
+        <div className="burger-bar"></div>
+        <div className="burger-bar"></div>
+        <div className="burger-bar"></div>
+      </div>
+
+      <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
+        <Link to="/#aboutus" smooth className="">
           О нас
         </Link>
-        <Link to="/#services" className="">
+        <Link to="/#services" smooth className="">
           Услуги
         </Link>
-        <Link to="/#footer" className="">
+        <Link to="/#footer" smooth className="">
           Контакты
         </Link>
       </div>
-      <div className="navbarContacts">
+      <div className={`navbarContacts ${isMenuOpen ? 'open' : ''}`}>
         <div className="location-dropdown">
           <div className="location-button">
             <img src="/location.svg" alt="Location" /> {selectedCity}{" "}

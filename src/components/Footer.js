@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footerContacts">
         <img src="/logo.svg" alt="Logo" />
         <div className="footerContactsTitle">
-          <p className="footerLocationTitle">Контакты</p>
+          <b >Контакты</b>
           <a href="tel:+79168305858">+7 (916) 830-58-58</a>
           <p>
             <a href="mailto:ckeproekt@yandex.ru">ckeproekt@yandex.ru</a>
@@ -24,14 +24,14 @@ const Footer = () => {
         </div>
       </div>
       <div className="footerLocation">
-        <p className="footerLocationTitle">
+        <b className="footerLocationTitle">
           <img
             src="/location.svg"
             alt="Location"
             className="footerLocationIcon"
           />
           Где мы находимся?
-        </p>
+        </b>
         <p>
           г.Москва,ул.Пресненская,
           <br /> д.6, ст. 2

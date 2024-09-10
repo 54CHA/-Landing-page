@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import FrontPage from "./components/FrontPage";
 import RegWindow from "./components/RegWindow";
@@ -12,32 +13,59 @@ import Services from "./components/Services";
 import Tech from "./components/Tech";
 import Documents from "./components/Documents";
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
-        <Route path="/tech" element={
-          <>
-            <Navbar />
-            <Tech />
-            <Questions />
-            <Footer />
-          </>
-        } />
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <RegWindow />
-            <FrontPage />
-            <AboutUs />
-            <Jobs />
-            <WhyUs />
-            <Documents />
-            <Services />
-            <Questions />
-            <Footer />
-          </>
-        } />
+        <Route
+          path="/services"
+          element={
+            <>
+              <Navbar />
+              <Tech />
+              <Questions />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <RegWindow />
+              <FrontPage />
+              <AboutUs />
+              <Jobs />
+              <WhyUs />
+              <Documents />
+              <Services />
+              <Questions />
+              <Footer />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );

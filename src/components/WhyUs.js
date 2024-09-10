@@ -8,7 +8,10 @@ const WhyUs = () => {
             Имеем все необходимые гарантии качества работ
           </div>
         </div>
-        <img src="/buildingPhoto.svg" alt="WhyUs" className="whyUsImage" />
+        <div className="whyUsImageContainer">
+          <img src="/1.svg" alt="building_image1" />
+          <img src="/2.svg" alt="building_image2" className="building_image2" />
+        </div>
       </div>
       <div className="points">
         <div className="point1">

@@ -9,12 +9,7 @@ const Tech = () => {
       <div className="serviceTitle">
         {service ? service.title : "Техническое обследование"}
       </div>
-      <div
-        style={{
-          display: "flex",
-          marginTop: "40px",
-          justifyContent: "space-between",
-        }}
+      <div className="serviceContent"
       >
         <div className="serviceText">
           {service

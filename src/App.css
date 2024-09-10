@@ -81,10 +81,130 @@ body {
   color: #ddebff;
 }
 
-
 .request a:hover {
   background-color: #ddebff;
   color: #4c74ac;
+}
+
+/* Burger Menu */
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar > *:first-child {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .burger-menu {
+    display: flex;
+    align-self: flex-end;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .navbar-links,
+  .navbarContacts {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4c74ac;
+    padding: 1rem 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-links.open,
+  .navbarContacts.open {
+    display: flex;
+  }
+
+  .location-dropdown,
+  .phoneNumber,
+  .request {
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .location-dropdown {
+    display: flex;
+    justify-content: center;
+  }
+
+  .phoneNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .request {
+    padding: 0.5rem 1rem;
+  }
+
+  .city-list {
+    position: static;
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .location-dropdown:hover .city-list {
+    display: block;
+  }
+
+  .location-dropdown {
+    width: 80%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .city-list {
+    position: static;
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: #3a5a8c;
+    border-radius: 5px;
+  }
+
+  .location-dropdown:hover .city-list,
+  .location-dropdown:focus-within .city-list {
+    display: block;
+  }
+
+  .city-list li {
+    padding: 0.5rem;
+    text-align: center;
+  }
 }
 
 /* Location Dropdown */
@@ -93,6 +213,7 @@ body {
   display: inline-block;
   color: white;
   font-weight: lighter;
+  white-space: nowrap;
 }
 
 .location-button {
@@ -103,15 +224,15 @@ body {
   display: flex;
   align-items: center;
   font-size: 30px;
-  padding: 5px 10px;
+  padding: 0.5% 1%;
 }
 
 .location-button img {
-  margin-right: 5px;
+  margin-right: 0.5%;
 }
 
 .dropdown-arrow {
-  margin-left: 5px;
+  margin-left: 0.5%;
   font-size: 0.8em;
   vertical-align: middle;
   transition: transform 0.3s ease;
@@ -138,6 +259,7 @@ body {
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
   font-size: 20px;
+  white-space: wrap;
 }
 
 .location-dropdown:hover .city-list {
@@ -163,6 +285,8 @@ a {
 
 .phoneNumber {
   color: white;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .callBack {
@@ -178,9 +302,10 @@ a {
   background-color: white;
   border-radius: 25px;
   color: #4c74ac;
-  width: 13.854vw;
-  height: 41px;
   font-size: 30px;
+  width: 100%;
+  white-space: nowrap;
+  padding: 1% 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +316,34 @@ a {
   background-color: #ddebff;
 }
 
-/* FRONT-PAGE */
+@media screen and (max-width: 1169px) {
+  .navbar {
+    font-size: 24px;
+    padding: 0.5rem;
+  }
+  .phoneNumber {
+    text-align: center;
+  }
+  .navbar-links {
+    gap: 30px;
+  }
+
+  .location-button {
+    font-size: 24px;
+  }
+
+  .city-list {
+    font-size: 16px;
+  }
+
+  .callBack {
+    font-size: 18px;
+  }
+
+  .request {
+    font-size: 24px;
+  }
+}
 
 .bgImage {
   background-image: url("../public/bgImage.png");
@@ -204,6 +356,12 @@ a {
   flex-direction: column;
   margin-top: 5rem;
   z-index: 1;
+}
+
+@media screen and (max-width: 770px) {
+  .bgImage {
+    margin-top: 4rem;
+  }
 }
 
 .bgImage::before {
@@ -222,18 +380,18 @@ a {
   font-family: "Benzin-Semibold";
   line-height: 130px;
 }
+
 .underTitle {
   color: #dfdede;
   padding-top: 1rem;
   font-weight: 400;
-  width: 50.729vw;
-
+  width: 50.729%;
   font-size: 30px;
 }
 
 .smallUnderTitle {
   color: #dfdede;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 15px;
   padding-top: 1rem;
 }
@@ -255,12 +413,12 @@ a {
   padding: 1rem 1.5rem;
   text-align: center;
   border-radius: 30px;
-  font-size: 60px;
-  font-weight: 700px;
+  font-size: 50px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: background 0.3s ease;
-  width: 853px;
+  width: 50%;
   height: 123px;
   margin-top: 30px;
   background-color: #86bfe5;
@@ -269,6 +427,36 @@ a {
   background-position: left;
   text-decoration: none;
   transition: 300ms background-position ease-in-out;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1630px) {
+  .consultation {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .consultation {
+    font-size: 20px;
+    width: 100%;
+    height: 60px;
+  }
+  .title {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .underTitle {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .smallUnderTitle {
+    font-size: 10px;
+    text-align: center;
+  }
 }
 
 .consultation:hover {
@@ -300,6 +488,7 @@ button {
   border-top-right-radius: 50px;
   z-index: 3;
   max-width: 35.6%;
+  flex-grow: 1;
 }
 
 .aboutUsLeftText {
@@ -311,7 +500,7 @@ button {
 
 .aboutUsLeftTextContainer {
   width: 69%;
-  margin-left: 101px;
+  margin-left: 15%;
 }
 
 .aboutUsLeftTitle {
@@ -320,10 +509,45 @@ button {
   font-size: 100px;
   font-weight: bold;
   line-height: 100px;
-  margin-left: 101px;
+  margin-left: 15%;
   margin-top: 70px;
-  margin-bottom: 10px;
+  margin-bottom: 1%;
   width: 60%;
+}
+
+@media screen and (max-width: 1740px) {
+  .aboutUsLeftTitle {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .aboutUsLeftText {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .aboutUsLeftTitle {
+    margin: auto;
+    margin-top: 70px;
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+  }
+  .aboutUsLeftText {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .aboutUsLeftTextContainer {
+    margin: auto;
+    text-align: center;
+    width: 90%;
+  }
+  .aboutUsLeft {
+    border-top-left-radius: 50px;
+  }
 }
 
 .aboutUsRight {
@@ -332,12 +556,12 @@ button {
   flex-direction: row;
   border-top-left-radius: 50px;
   padding-top: 70px;
-  width: 100%;
   max-width: 64.4%;
   flex-wrap: wrap;
   gap: 4px;
-  position: relative; /* Add this */
+  position: relative;
   z-index: 5;
+  flex-grow: 1;
 }
 
 .leftHalf {
@@ -346,6 +570,7 @@ button {
   flex-direction: column;
   position: relative;
 }
+
 .buildingContainer {
   position: relative;
 }
@@ -354,6 +579,7 @@ button {
   z-index: 2;
   width: 100%;
   position: relative;
+  transform: translateY(1%);
 }
 
 .leftHalfImgTop {
@@ -370,12 +596,10 @@ button {
   display: flex;
   flex-direction: column;
 }
-
 .leftHalfSmallBlocks {
-  gap: 1rem;
   display: flex;
-
-  min-height: 200px;
+  min-height: 20%;
+  gap: 1rem;
 }
 
 .smallBlock2 {
@@ -386,18 +610,18 @@ button {
   text-align: center;
   width: 95%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   height: 250px;
-  min-height: 184px;
-  font-size: 30px;
+  height: 250px;
+  font-size: 25px;
 }
 
 .smallBlock1 {
   background-color: #687cbc;
   border-radius: 50px;
   color: white;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   font-size: 25px;
   width: 100%;
@@ -410,6 +634,7 @@ button {
   width: 82%;
   align-self: center;
 }
+
 .smallBlock1Text3 {
   width: 60%;
   align-self: center;
@@ -432,6 +657,35 @@ button {
   .rigthHalf {
     max-width: 100%;
   }
+
+  .aboutUsRight {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .smallBlock1 {
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: 12px;
+    height: 100px;
+  }
+  .smallBlock2 {
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 210px;
+    margin-top: 15px;
+  }
+  .smallBlock1Text {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .leftHalfSmallBlocks {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 /* Jobs */
@@ -441,10 +695,21 @@ button {
   color: #4c74ac;
   font-size: 100px;
   font-weight: bold;
-  margin-left: 101px;
+  margin-left: 5%;
   line-height: 130px;
   margin-bottom: 2rem;
-  margin-top: 70px;
+  margin-top: 7%;
+}
+
+@media screen and (max-width: 1200px) {
+  .jobsTitle {
+    font-size: 50px;
+    line-height: 60px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }
 
 .jobs {
@@ -452,8 +717,7 @@ button {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 100%;
-  max-width: 1800px; /* Adjust this value as needed */
+  max-width: 90%;
 }
 
 .jobsContainer {
@@ -472,7 +736,7 @@ button {
   color: #dfdede;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2%;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -509,63 +773,137 @@ button {
   margin-top: auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .jobsBox {
+    width: 320px;
+    height: 300px;
+  }
+
+  .jobsBoxTitle {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  .jobsBoxText {
+    font-size: 15px;
+  }
+
+  .jobsBoxText2 {
+    font-size: 15px;
+  }
+}
 /* Footer */
 
 .footer {
   background-color: #4c74ac;
   color: white;
-  padding: 1rem;
+  padding: 3rem 1rem;
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
   font-size: 30px;
-  height: 400px;
-  padding: 3rem 0;
+  min-height: 400px;
   bottom: 0;
+  flex-wrap: wrap;
 }
-.footerContacts {
+
+.footerContacts,
+.footerLocation {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
+  margin-bottom: 2rem;
 }
 
 .footerLinks {
   display: flex;
   flex-direction: row;
-  gap: 60px;
-  height: 116px;
+  gap: 90px;
+  margin-bottom: 2rem;
+}
+
+.footerContactsTitle {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+.footerContactsTit {
+  flex-direction: column;
+  gap: 40px;
 }
 
 .footerLinksTitle {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 20px;
   font-size: 40px;
 }
 
 .footerContactsTitle {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+  font-size: 30px;
 }
 
-.footerLocation {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.footerLocationIcon {
+  width: 30px;
+  font-size: 40px;
 }
 
 .footerLocationTitle {
   display: flex;
-  font-size: 40px;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 1200px) {
+  .footer {
+    font-size: 16px;
+    padding: 2rem 1rem;
+  }
+
+  .footerLinksTitle,
+  .footerContactsTitle {
+    font-size: 18px;
+  }
 }
 
-.footerLocationIcon {
-  width: 40px;
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0.5rem;
+  }
+
+  .footerContacts,
+  .footerLinks,
+  .footerLocation {
+    width: 100%;
+    align-items: center;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footerLinksTitle {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 }
 
+@media screen and (max-width: 480px) {
+  .footer {
+    font-size: 14px;
+  }
+
+  .footerLinksTitle,
+  .footerContactsTitle {
+    font-size: 16px;
+  }
+}
 /* POPUP-WINDOW */
-
 .window {
   width: 50rem;
   max-width: 800px;
@@ -581,6 +919,18 @@ button {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.75);
   padding: 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .window {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .window {
+    transform: translate(-50%, -50%) scale(0.4);
+  }
 }
 
 .inputWindow,
@@ -727,9 +1077,9 @@ select:focus {
   color: #4c74ac;
   font-size: 30px;
   font-weight: 500;
-  max-width: 65%;
+  width: 65%;
   font-style: italic;
-  transform: translateX(-1px);
+  transform: translateX(-1%);
   z-index: 10;
 }
 
@@ -761,11 +1111,21 @@ select:focus {
 
 .servicesBox:hover::before {
   content: "";
-  opacity: 35%;
+  opacity: 0.35;
 }
 
 .servicesBox:hover {
   transform: scale(1.01);
+}
+
+@media screen and (max-width: 1200px) {
+  .servicesBox {
+    width: 300px;
+    height: 300px;
+  }
+  .servicesBoxTitle {
+    font-size: 20px;
+  }
 }
 
 /* Questions */
@@ -773,10 +1133,11 @@ select:focus {
 .questionsContainer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 5rem;
-  margin-top: 6rem;
-  margin-left: 101px;
+  margin-bottom: 5%;
+  margin-top: 6%;
+  margin-left: 5%;
 }
+
 .questionsTitle {
   font-size: 100px;
   font-weight: bold;
@@ -789,41 +1150,30 @@ select:focus {
 
 .questionsText {
   font-size: 30px;
-  max-width: 558px;
+  max-width: 60%;
   color: #687cbc;
 }
 
 .questions {
   display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
+  flex-direction: row;
+  margin-top: 2%;
 }
 
 /* Send Question */
 
 .sendQuestion {
-  width: 38%;
+  width: 50%;
   height: auto;
   overflow-x: hidden;
+  overflow-y: hidden;
   margin-right: 5%;
-}
-
-.sendQuestionForm {
-  display: flex;
-  flex-direction: column;
 }
 
 .sendQuestionFormRow {
   display: flex;
-  gap: 20px;
+  gap: 3%;
   margin-bottom: 0;
-}
-
-.sendQuestionFormRow1,
-.sendQuestionFormRow2 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .sendQuestionForm input,
@@ -832,14 +1182,14 @@ select:focus {
   padding: 10px 15px;
   border: 2px solid #1e3d83;
   border-radius: 30px;
-  font-size: 30px;
   box-sizing: border-box;
-  overflow-y: auto;
+  overflow-y: hidden;
   outline: none;
+  font-size: 20px;
 }
 
 .sendQuestionForm input {
-  margin-bottom: 30px;
+  margin-bottom: 6%;
 }
 
 .sendQuestionForm textarea {
@@ -847,15 +1197,13 @@ select:focus {
   min-height: 150px;
   max-width: 100%;
   overflow-x: hidden;
-  padding-left: 15px;
-  padding-top: 10px;
+  font-size: 20px;
 }
 
 .sendQuestionSubmit {
   width: 100%;
   font-style: italic;
   font-weight: 500;
-  font-size: 30px;
   background-color: #1e3d83;
   color: white;
   border: none;
@@ -863,9 +1211,10 @@ select:focus {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 45px;
+  margin-top: 4.5%;
   outline: none;
   overflow: hidden;
+  font-size: 30px;
 }
 
 .sendQuestionSubmit:hover {
@@ -877,42 +1226,92 @@ select:focus {
   background-color: #5c84c5;
 }
 
-.sendQuestionForm textarea::placeholder {
-  padding-top: 0;
-}
-
 /* Placeholder styles */
 .sendQuestionForm input::placeholder,
 .sendQuestionForm textarea::placeholder {
   color: #4c74ac;
   opacity: 1;
-}
 
-/* For Internet Explorer */
-.sendQuestionForm input:-ms-input-placeholder,
-.sendQuestionForm textarea:-ms-input-placeholder {
-  color: #4c74ac;
-}
-
-/* For Microsoft Edge */
-.sendQuestionForm input::-ms-input-placeholder,
-.sendQuestionForm textarea::-ms-input-placeholder {
-  color: #4c74ac;
+  font-size: 30px;
+  white-space: nowrap;
 }
 
 /* Ensure inputs take full width of their container */
 .sendQuestionFormRow1 input,
 .sendQuestionFormRow2 input {
   width: 100%;
+  font-size: 30px;
 }
 
+.questionsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+  .sendQuestionForm input,
+  .sendQuestionForm textarea {
+    font-size: 15px;
+  }
+  .sendQuestionFormRow1 input,
+  .sendQuestionFormRow2 input {
+    font-size: 15px;
+  }
+  .sendQuestionForm input::placeholder,
+  .sendQuestionForm textarea::placeholder {
+    font-size: 15px;
+    white-space: wrap;
+  }
+  .sendQuestionSubmit {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .questionsTitle {
+    font-size: 50px;
+    line-height: 60px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+  .questionsText {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  .questions {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .questionsContainer {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sendQuestion {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+  }
+}
 /* Why Us */
 
 .whyUs {
-  margin: 5rem;
+  margin: 5%;
   margin-right: 0;
-  margin-left: 101px;
+  margin-left: 5%;
 }
+
 .whyUsContainer {
   display: flex;
   flex-direction: row;
@@ -923,21 +1322,15 @@ select:focus {
   font-size: 100px;
   font-weight: bold;
   font-family: "Benzin-Semibold";
-  width: 676px;
-  height: 274px;
+  width: 100%;
+  height: auto;
   line-height: 100px;
-  margin-bottom: 2rem;
+  margin-bottom: 2%;
 }
-
-.whyUsImage {
-  transform: translateX(-280px);
-  width: 1316px;
-}
-
 .whyUsText {
   font-size: 30px;
   color: #687cbc;
-  width: 356px;
+  width: 60%;
 }
 
 .whyUsTextContainer {
@@ -945,11 +1338,77 @@ select:focus {
   flex-direction: column;
 }
 
-@media screen and (max-width: 1919px) {
-  .whyUsImage {
-    visibility: hidden;
-    position: absolute;
+.whyUsImageContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  transform: translateX(-270px);
+}
+
+@media screen and (min-width: 2000px) {
+  .whyUsImageContainer {
+    transform: none;
+    margin-right: 5%;
   }
+}
+
+@media screen and (max-width: 1919px) {
+  .building_image2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .whyUsImageContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .whyUs {
+    margin: auto;
+  }
+  .whyUsTitle {
+    font-size: 50px;
+    line-height: 60px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .whyUsText {
+    width: 80%;
+    text-align: center;
+    font-size: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+  .whyUsTextContainer {
+    margin: auto;
+    width: 90%;
+  }
+}
+
+.whyUsImage {
+  transform: translateX(-550px);
+  width: 100%;
+}
+
+.whyUsImage2 {
+  width: 100%;
+  transform: translateX(-530px);
+}
+
+.whyUsImages {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .points {
@@ -1003,13 +1462,64 @@ select:focus {
   margin-left: 5%;
   text-align: center;
 }
+@media screen and (max-width: 1200px) {
+  .points {
+    gap: 10px;
+  }
+  .point1 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point2 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point3 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point4 {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .points {
+    gap: 20px;
+  }
+  .point1 {
+    margin: auto;
+    width: 90%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point2 {
+    margin: auto;
+    width: 90%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point3 {
+    margin: auto;
+    width: 90%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .point4 {
+    margin: auto;
+    width: 90%;
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
 
 /* Documents */
 
 .documents {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  margin-top: 5%;
   overflow: hidden;
   position: relative;
 }
@@ -1018,7 +1528,7 @@ select:focus {
 .documents::after {
   position: absolute;
   top: 0;
-  width: 250px;
+  width: 15%;
   height: 100%;
   z-index: 2;
   content: "";
@@ -1042,11 +1552,6 @@ select:focus {
   animation-play-state: paused;
 }
 
-.documents img {
-  height: 545px;
-  margin: 0 5px;
-}
-
 .documentSlide {
   white-space: nowrap;
   animation: slide 35s infinite linear;
@@ -1061,47 +1566,118 @@ select:focus {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .documents {
+    margin-top: 5%;
+  }
+  .documents img {
+    height: 40vh;
+  }
+  .documents:hover .documentSlide {
+    animation-play-state: running;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .documents img {
+    height: 30vh;
+  }
+}
 /* Second Page */
 
-.questionsContainer,
 .serviceContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 5% 0;
 }
 
 .serviceTitle {
   font-family: "Benzin-Semibold";
-  font-size: 75px;
+  font-size: 70px;
   font-weight: bold;
   color: #4c74ac;
-  margin-left: 101px;
-  line-height: 4rem;
-  margin-bottom: 1.5rem;
-  font-family: "Benzin-Semibold";
-  width: 60%;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
 }
 
 .service {
-  margin-top: 150px;
+  margin-top: 5%;
 }
 
-.questionsText {
-  font-size: 30px;
-  width: 868px;
-  color: #687cbc;
-  font-weight: 500;
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .serviceImage {
-  width: 700px;
-  border-radius: 50px;
-  margin-right: 106px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 2rem;
 }
+
 .serviceText {
-  font-size: 1.875rem;
+  font-size: 18px;
   color: #687cbc;
   font-weight: 400;
-  margin-left: 101px;
-  max-width: 45%;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+@media screen and (min-width: 1350px) {
+  .serviceContent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .serviceImage {
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  .serviceText {
+    width: 60%;
+    text-align: left;
+    font-size: 2vw;
+    margin-left: 5rem;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .service {
+    margin-top: 10%;
+  }
+  .serviceText {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .serviceText {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .service {
+    margin-top: 24%;
+  }
+
+  .serviceTitle {
+    font-size: 34px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  .serviceText {
+    width: 90%;
+    margin-bottom: 5%;
+  }
 }
