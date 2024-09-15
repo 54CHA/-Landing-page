@@ -35,7 +35,7 @@ const AboutUs = () => {
               <div className="smallBlock1Text2">обследовано зданий и сооружений</div>
             </div>
             <div className="smallBlock1">
-              <div className="smallBlock1Text">{">"}600 </div>
+              <div className="smallBlock1Text">{">"}1500 </div>
               <div className="smallBlock1Text2">квартир прошли проверку на качество ремонта</div>
             </div>
           </div>
