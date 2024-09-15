@@ -10,10 +10,10 @@ const FrontPage = () => {
   return (
     <div className="bgImage" id="frontpage">
       <div className="frontPage">
-        <div className="title">Центр комплексной экспертизы</div>
+        <div className="title">Центр комплексных экспертиз</div>
         <div className="underTitle">
-          Проведём экспертизу любого профиля: строительно-техническую,
-          оценочную, экспертизу пожарной безопасности. Профессиональное
+          Проведём экспертизу любого профиля: строительно-техническую или
+          оценочную. Профессиональное
           заключение от квалифицированных специалистов.{" "}
         </div>
         <button className="consultation" onClick={openRegWindow}>

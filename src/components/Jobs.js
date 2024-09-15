@@ -7,19 +7,18 @@ const Jobs = () => {
           <div className="jobsBox">
             <div className="jobsBoxTitle">/01</div>
             <div className="jobsBoxTextContainer">
-              <div className="jobsBoxText">Проведение независимой оценки</div>
+              <div className="jobsBoxText">Заявка или звонок </div>
               <div className="jobsBoxText2">
-                Которая полностью соответствует требованиям закона и суда
+              Свяжитесь с нами удобным для вас способом — мы всегда на связи и готовы помочь
               </div>
             </div>
           </div>
           <div className="jobsBox">
             <div className="jobsBoxTitle">/02</div>
             <div className="jobsBoxTextContainer">
-              <div className="jobsBoxText">Отсутствие предоплаты</div>
+              <div className="jobsBoxText">Первичная консультация</div>
               <div className="jobsBoxText2">
-                За юридические услуги и подробное консультирование на каждом
-                этапе работы{" "}
+              Мы детально изучаем ваш запрос и  предлагаем наилучшие решения для вашего комфорта! {" "}
               </div>
             </div>
           </div>
@@ -27,11 +26,10 @@ const Jobs = () => {
             <div className="jobsBoxTitle">/03</div>
             <div className="jobsBoxTextContainer">
               <div className="jobsBoxText">
-                Гарантированное вынесение решения суда в вашу пользу
+              Подписание договора
               </div>
               <div className="jobsBoxText2">
-                В случае отказа судом, вы не оплачиваете наши услуги – это
-                указано в договоре{" "}
+              Мы предоставляем чёткие гарантии, учитываем все детали и внимательно разъясняем каждое предложение, чтобы вы всегда были уверены и довольны!{" "}
               </div>
             </div>
           </div>
@@ -39,10 +37,10 @@ const Jobs = () => {
             <div className="jobsBoxTitle">/04</div>
             <div className="jobsBoxTextContainer">
               <div className="jobsBoxText">
-                Ведение исполнительного производства
+              Анализ данных 
               </div>
               <div className="jobsBoxText2">
-                Мы работаем до появления денег у вас на счету
+              Выезд на объект проведение независимой экспертизы 
               </div>
             </div>
           </div>
@@ -50,10 +48,21 @@ const Jobs = () => {
             <div className="jobsBoxTitle">/05</div>
             <div className="jobsBoxTextContainer">
               <div className="jobsBoxText">
-                Сами получаем решение, исполнительный лист
+              Камеральная обработка данных
               </div>
               <div className="jobsBoxText2">
-                Которая полностью соответствует требованиям закона и суда
+              Составление и передача результатов экспертизы
+              </div>
+            </div>
+          </div>
+          <div className="jobsBox">
+            <div className="jobsBoxTitle">/06</div>
+            <div className="jobsBoxTextContainer">
+              <div className="jobsBoxText">
+              Юридическая поддержка
+              </div>
+              <div className="jobsBoxText2">
+              Если вам понадобится юридическая поддержка, наши опытные юристы будут рядом, готовые обеспечить вам квалифицированное сопровождение на каждом этапе!{" "}
               </div>
             </div>
           </div>

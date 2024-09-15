@@ -43,7 +43,7 @@ const AboutUs = () => {
         <div className="rigthHalf">
           <img src="/Building2.svg" alt="Building 2" />
           <div className="smallBlock2">
-            <div className="smallBlock1Text">{">"}2500</div>
+            <div className="smallBlock1Text">{">"}1500</div>
             <div className="smallBlock1Text3">квартирам мы оказали помощь при затоплении</div>
           </div>
         </div>

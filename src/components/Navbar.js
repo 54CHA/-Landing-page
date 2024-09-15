@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import RegWindow from "./RegWindow";
 
-const Navbar = () => {
+const cities = ["Москва", "Чебоксары"]; 
+const phoneNumbers = {
+  Москва: "+7 (495) 123-45-67",
+  Чебоксары: "+7 (8352) 123-45-67",
+}; 
+
+const Navbar = ({ selectedCity, setSelectedCity }) => { 
   const [isRegWindowOpen, setIsRegWindowOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openRegWindow = () => setIsRegWindowOpen(true);
   const closeRegWindow = () => setIsRegWindowOpen(false);
-  const [selectedCity, setSelectedCity] = useState("Москва");
-
-  const cities = ["Москва", "Санкт-Петербург"];
-
-  const phoneNumbers = {
-    Москва: "+7 (916) 830-58-58",
-    "Санкт-Петербург": "+7 (916) 830-58-58",
-  };
 
   const selectCity = (city) => {
-    setSelectedCity(city);
+    setSelectedCity(city); 
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const availableCities = cities.filter(city => city !== selectedCity);
+
   return (
     <nav className="navbar">
       <Link to="/#frontpage" smooth>
-        <img src="/logo.svg" alt="Logo" />
+        <img src="/logo.svg" className='logo' alt="Logo" />
       </Link>
 
       <div className="burger-menu" onClick={toggleMenu}>
@@ -51,11 +51,11 @@ const Navbar = () => {
       <div className={`navbarContacts ${isMenuOpen ? 'open' : ''}`}>
         <div className="location-dropdown">
           <div className="location-button">
-            <img src="/location.svg" alt="Location" /> {selectedCity}{" "}
+            <img src="/location.svg" alt="Location" className='locationImg' /> {selectedCity}{" "}
             <span className="dropdown-arrow">&#9662;</span>
           </div>
           <ul className="city-list">
-            {cities.map((city) => (
+            {availableCities.map((city) => (
               <li key={city} onClick={() => selectCity(city)}>
                 {city}
               </li>
@@ -76,7 +76,7 @@ const Navbar = () => {
       <RegWindow
         isOpen={isRegWindowOpen}
         onClose={closeRegWindow}
-        selectedCity={selectedCity} // Pass the selected city as a prop
+        selectedCity={selectedCity} 
       />
     </nav>
   );

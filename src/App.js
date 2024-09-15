@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; 
 import Navbar from "./components/Navbar";
 import FrontPage from "./components/FrontPage";
 import RegWindow from "./components/RegWindow";
@@ -34,6 +34,8 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [selectedCity, setSelectedCity] = useState("Москва"); 
+
   return (
     <Router>
       <ScrollToTop />
@@ -42,10 +44,10 @@ function App() {
           path="/services"
           element={
             <>
-              <Navbar />
+              <Navbar selectedCity={selectedCity} setSelectedCity={setSelectedCity} /> 
               <Tech />
               <Questions />
-              <Footer />
+              <Footer selectedCity={selectedCity} /> 
             </>
           }
         />
@@ -53,16 +55,17 @@ function App() {
           path="/"
           element={
             <>
-              <Navbar />
+              <Navbar selectedCity={selectedCity} setSelectedCity={setSelectedCity} /> 
               <RegWindow />
               <FrontPage />
               <AboutUs />
-              <Jobs />
+            
               <WhyUs />
               <Documents />
+              <Jobs />
               <Services />
               <Questions />
-              <Footer />
+              <Footer selectedCity={selectedCity} /> 
             </>
           }
         />
