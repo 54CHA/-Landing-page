@@ -5,7 +5,7 @@ import RegWindow from "./RegWindow";
 const cities = ["Москва", "Чебоксары"]; 
 const phoneNumbers = {
   Москва: "+7 (495) 123-45-67",
-  Чебоксары: "+7 (8352) 123-45-67",
+  Чебоксары: "+7 (495) 123-45-67",
 }; 
 
 const Navbar = ({ selectedCity, setSelectedCity }) => { 
@@ -25,6 +25,11 @@ const Navbar = ({ selectedCity, setSelectedCity }) => {
 
   const availableCities = cities.filter(city => city !== selectedCity);
 
+  const handleLinkClick = (city, targetId) => {
+    selectCity(city);
+    toggleMenu(); 
+  }; 
+
   return (
     <nav className="navbar">
       <Link to="/#frontpage" smooth>
@@ -38,25 +43,28 @@ const Navbar = ({ selectedCity, setSelectedCity }) => {
       </div>
 
       <div className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/#aboutus" smooth className="">
+        <Link to="/#aboutus" smooth onClick={() => handleLinkClick(selectedCity, 'aboutus')}>
           О нас
         </Link>
-        <Link to="/#services" smooth className="">
+        <Link to="/#services" smooth onClick={() => handleLinkClick(selectedCity, 'services')}>
           Услуги
         </Link>
-        <Link to="/#footer" smooth className="">
+        <Link to="/#footer" smooth onClick={() => handleLinkClick(selectedCity, 'footer')}>
           Контакты
         </Link>
       </div>
-      <div className={`navbarContacts ${isMenuOpen ? 'open' : ''}`}>
+      <div className={`navbarContacts ${isMenuOpen ? 'open' : ''}`} >
         <div className="location-dropdown">
           <div className="location-button">
             <img src="/location.svg" alt="Location" className='locationImg' /> {selectedCity}{" "}
             <span className="dropdown-arrow">&#9662;</span>
           </div>
-          <ul className="city-list">
+          <ul className="city-list" >
             {availableCities.map((city) => (
-              <li key={city} onClick={() => selectCity(city)}>
+              <li key={city} onClick={() => { 
+                selectCity(city); 
+                toggleMenu(); // Toggle the menu when a city is selected
+              }}>
                 {city}
               </li>
             ))}
@@ -66,11 +74,17 @@ const Navbar = ({ selectedCity, setSelectedCity }) => {
         <div className="phoneNumber" onClick={openRegWindow}>
           <a>
             {phoneNumbers[selectedCity]}
-            <div className="callBack">заказать обратный звонок</div>
+            <div className="callBack" onClick={() => { 
+              toggleMenu(); 
+            }}>
+              заказать обратный звонок
+            </div>
           </a>
         </div>
         <button className="request" onClick={openRegWindow} style={{}}>
-          Оставить заявку
+          <div onClick={() => { 
+              toggleMenu(); 
+            }}>Оставить заявку</div>
         </button>
       </div>
       <RegWindow

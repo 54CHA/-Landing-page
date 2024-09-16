@@ -20,13 +20,16 @@ function ScrollToTop() {
     if (!hash) {
       window.scrollTo(0, 0);
     } else {
-      setTimeout(() => {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 0);
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 2 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 2rem in pixels
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth'
+        });
+      }   
     }
   }, [pathname, hash]);
 

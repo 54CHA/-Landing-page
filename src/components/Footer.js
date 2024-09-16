@@ -20,12 +20,12 @@ const Footer = ({ selectedCity }) => {
       </div>
       <div className="footerLinks">
         <div className="footerLinksTitle">
-          <Link to="#aboutus">О нас</Link>
-          <Link to="#services">Услуги</Link>
+          <Link to="#aboutus" smooth>О нас</Link>
+          <Link to="#services" smooth>Услуги</Link>
         </div>
         <div className="footerLinksTitle">
-          <Link to="#jobs">Порядок работ</Link>
-          <Link to="#whyUs">Почему выбирают нас</Link>
+          <Link to="#jobs" smooth>Порядок работ</Link>
+          <Link to="#whyUs" smooth>Почему выбирают нас</Link>
         </div>
       </div>
       <div className="footerLocation">
