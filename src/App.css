@@ -1502,7 +1502,57 @@ select:focus {
   text-align: center;
 }
 
+.point4 {
+  border: 2px solid #1e3d83;
+  font-size: 30px;
+  color: #4c74ac;
+  border-radius: 30px;
+  width: 51%;
+  padding: 10px;
+  margin-left: 42%;
+  text-align: center;
+}
 
+.point5 {
+  border: 2px solid #1e3d83;
+  font-size: 30px;
+  color: #4c74ac;
+  border-radius: 30px;
+  width: 70%;
+  padding: 10px;
+  margin-left: 16%;
+  text-align: center;
+}
+.point6 {
+  border: 2px solid #1e3d83;
+  font-size: 30px;
+  color: #4c74ac;
+  border-radius: 30px;
+  width: 30%;
+  padding: 10px;
+  margin-left: 20%;
+  text-align: center;
+}
+.point7 {
+  border: 2px solid #1e3d83;
+  font-size: 30px;
+  color: #4c74ac;
+  border-radius: 30px;
+  width: 45%;
+  padding: 10px;
+  margin-left: 35%;
+  text-align: center;
+}
+.point8 {
+  border: 2px solid #1e3d83;
+  font-size: 30px;
+  color: #4c74ac;
+  border-radius: 30px;
+  width: 30%;
+  padding: 10px;
+  margin-left: 33%;
+  text-align: center;
+}
 
 @media screen and (max-width: 1200px) {
   .points {
@@ -1564,6 +1614,8 @@ select:focus {
 .documents:hover .documentSlide {
   animation-play-state: paused;
 }
+
+
 
 .documentSlide {
   white-space: nowrap;
