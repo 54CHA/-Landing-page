@@ -17,20 +17,24 @@ function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) {
-      window.scrollTo(0, 0);
-    } else {
-      const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        const offset = 2 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 2rem in pixels
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: elementPosition - offset,
-          behavior: 'smooth'
-        });
-      }   
-    }
+    const scrollToElement = () => {
+      if (!hash) {
+        window.scrollTo(0, 0);
+      } else {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 2 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 2rem in pixels
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+
+    scrollToElement();
   }, [pathname, hash]);
 
   return null;
