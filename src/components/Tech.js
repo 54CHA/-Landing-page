@@ -7,14 +7,11 @@ const Tech = () => {
   return (
     <div className="service">
       <div className="serviceTitle">
-        {service ? service.title : "Техническое обследование"}
+        {service ? service.title : "Oops, что то пошло не так"}
       </div>
-      <div className="serviceContent"
-      >
+      <div className="serviceContent">
         <div className="serviceText">
-          {service
-            ? service.description
-            : "Обследование технического состояния зданий и сооружений – один из видов инженерных изысканий..."}
+          {service ? service.description : "Oops, что то пошло не так"}
         </div>
         {service && service.image && (
           <div className="serviceImageContainer">

@@ -1,6 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react"; 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import FrontPage from "./components/FrontPage";
 import RegWindow from "./components/RegWindow";
@@ -21,14 +26,16 @@ function ScrollToTop() {
       if (!hash) {
         window.scrollTo(0, 0);
       } else {
-        const id = hash.replace('#', '');
+        const id = hash.replace("#", "");
         const element = document.getElementById(id);
         if (element) {
-          const offset = 2 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 2rem in pixels
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offset =
+            2 * parseFloat(getComputedStyle(document.documentElement).fontSize); // 2rem in pixels
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: elementPosition - offset,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       }
@@ -41,7 +48,7 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [selectedCity, setSelectedCity] = useState("Москва"); 
+  const [selectedCity, setSelectedCity] = useState("Москва");
 
   return (
     <Router>
@@ -51,10 +58,13 @@ function App() {
           path="/services"
           element={
             <>
-              <Navbar selectedCity={selectedCity} setSelectedCity={setSelectedCity} /> 
+              <Navbar
+                selectedCity={selectedCity}
+                setSelectedCity={setSelectedCity}
+              />
               <Tech />
               <Questions />
-              <Footer selectedCity={selectedCity} /> 
+              <Footer selectedCity={selectedCity} />
             </>
           }
         />
@@ -62,17 +72,20 @@ function App() {
           path="/"
           element={
             <>
-              <Navbar selectedCity={selectedCity} setSelectedCity={setSelectedCity} /> 
+              <Navbar
+                selectedCity={selectedCity}
+                setSelectedCity={setSelectedCity}
+              />
               <RegWindow />
               <FrontPage />
               <AboutUs />
-            
+
               <WhyUs />
               <Documents />
               <Jobs />
               <Services />
               <Questions />
-              <Footer selectedCity={selectedCity} /> 
+              <Footer selectedCity={selectedCity} />
             </>
           }
         />
